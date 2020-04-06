@@ -108,6 +108,7 @@
     .video-box-video{
         height: 27vh;
         width: 100%;
+        object-fit:cover;
     }
     .video-box-controls{
         height: 6vh;
@@ -126,7 +127,9 @@
         top: 3vh;
         left: 2%;
         background: url("/static/index-heart.png") center center no-repeat;
-        background-size: 100% 100%
+        background-size: 100% 100%;
+        animation: doudong 1s;
+        animation-iteration-count: 999999999;
     }
     .logo-box{
         height:  10vh
@@ -174,5 +177,17 @@
         background: url("/static/voice.png") center center no-repeat;
         background-size:auto 60%;
         margin-top: 0.2vh;
+    }
+
+    @keyframes doudong{
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(0.9);
+        }
+        100% {
+            transform: scale(1);
+        }
     }
 </style>
