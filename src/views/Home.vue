@@ -1,7 +1,8 @@
 <template>
     <div>
         <div class="video-box">
-            <video class="video-box" src=""></video>
+            <video class="video-box-video" src="https://v-cdn.zjol.com.cn/280443.mp4"></video>
+            <div class="video-box-controls"></div>
         </div>
         <div class="center-box">
             <div></div>
@@ -32,6 +33,14 @@
     .video-box{
         height: 35vh;
         background: #000;
+    }
+    .video-box-video{
+        height: 30vh;
+        width: 100%;
+    }
+    .video-box-controls{
+        height: 5vh;
+        background: #fff;
     }
     .center-box{
         height: 45vh;
