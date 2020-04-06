@@ -4,8 +4,8 @@
             <img src="/static/logo.png"/>
         </swiper-slide>
         <!-- 左右箭头 -->
-        <div class="swiper-button-prev" slot="button-prev"></div>
-        <div class="swiper-button-next" slot="button-next"></div>
+        <div class="sleft" slot="button-prev">1111</div>
+        <div class="sright" slot="button-next">22222</div>
     </swiper>
 </template>
 
@@ -25,15 +25,11 @@
                 swiperOption:{
                     //设置点击箭头
                     navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev'
+                        nextEl: '.sleft',
+                        prevEl: '.sright'
                     },
                     //自动轮播
-                    autoplay: {
-                        delay: 2000,
-                        //当用户滑动图片后继续自动轮播
-                        disableOnInteraction: false,
-                    },
+                    autoplay: false,
                     //开启循环模式
                     loop: true
                 }
@@ -49,5 +45,10 @@
 </script>
 
 <style scoped>
-
+    .sleft:focus{
+        outline: none;
+    }
+    .sright:focus{
+        outline: none;
+    }
 </style>
