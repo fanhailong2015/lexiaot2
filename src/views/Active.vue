@@ -1,15 +1,33 @@
 <template>
-    <ul id="box">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>7</li>
-        <li>8</li>
-        <li>9</li>
-    </ul>
+    <div class="blockDiv">
+        <div class="block">
+            <img src="/static/active1/img-1.png"/>
+        </div>
+        <div class="block">
+            <img src="/static/active1/img-2.png"/>
+        </div>
+        <div class="block">
+            <img src="/static/active1/img-3.png"/>
+        </div>
+        <div class="block">
+            <img src="/static/active1/img-4.png"/>
+        </div>
+        <div class="block">
+            <img src="/static/active1/img-5.png"/>
+        </div>
+        <div class="block">
+            <img src="/static/active1/img-6.png"/>
+        </div>
+        <div class="block">
+            <img src="/static/active1/img-7.png"/>
+        </div>
+        <div class="block">
+            <img src="/static/active1/img-8.png"/>
+        </div>
+        <div class="block">
+            <img src="/static/active1/img-9.png"/>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -19,23 +37,22 @@
 </script>
 
 <style scoped>
-    #box{
-        list-style: none;
-        overflow:hidden;
+    .blockDiv{
+        width: 80%;
+        display:flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
     }
-    #box li{
-        width:25%;
-        height:20vh;
+    .block{
+        width: calc(calc(100% / 3) - 2px);
         margin:1px;
-        background:pink;
-        float:left;
-        font-size:50px;
-        color:#fff;
-        text-align:center;
-        line-height:200px;
-        transition:all 1s;/*全部1s内变化*/
+        box-sizing: border-box;
     }
-    #box li:hover {
-        transform:scale(1.2);/*比例变大2倍*/
+    .block:hover{
+
+    }
+    .block img{
+        width: 100%;
+        display: block;
     }
 </style>
