@@ -16,7 +16,7 @@
                     <input type="range" @input="mySlidechange($event.target)" min="0" max="100" class="videoProgress" v-model="vcProgress" :style="{backgroundSize:+ vcProgress*100/100 +'% 100%'}"/>
                 </div>
                 <!-- 声音 -->
-                <div class="vcVoice"></div>
+                <div class="vcVoice" @click="onVoice()"></div>
             </div>
         </div>
         <div class="center-box">
@@ -60,6 +60,9 @@
                     this.$refs.video.webkitRequestFullScreen();
                 }
             },
+            onVoice(){
+                this.$refs.video.muted = !this.$refs.video.muted
+            },
             onPlayerPlay() {
                 console.log('on player');
             },
@@ -99,20 +102,20 @@
 </script>
 <style  scoped>
     .video-box{
-        height: 35vh;
+        height: 33vh;
         background: #000;
     }
     .video-box-video{
-        height: 30vh;
+        height: 27vh;
         width: 100%;
     }
     .video-box-controls{
-        height: 5vh;
+        height: 6vh;
         background: #fff;
     }
     .center-box{
         position: relative;
-        height: 55vh;
+        height: 57vh;
         background: url("/static/index-img.png") center center no-repeat;
         background-size: 95% 100%;
     }
@@ -134,19 +137,22 @@
         height: 5vh;
         background: url("/static/stop.png") center center no-repeat;
         background-size: auto 60%;
+        margin-top: 0.4vh;
     }
     .videoProgress{
-        margin-top:1vh;
+        margin-top:1.8vh;
     }
     .vcPlayBtn{
         width: 10%;
         height: 5vh;
         background: url("/static/play.png") center center no-repeat;
         background-size: auto 60%;
+        margin-top: 0.4vh;
     }
     .vcPlayTime{
         width: 26%;
         line-height: 5vh;
+        margin-top: 0.4vh;
     }
     .vcBottom{
         width: 39%;
@@ -160,11 +166,13 @@
         height: 5vh;
         background: url("/static/full.png") center center no-repeat;
         background-size: auto 60%;
+        margin-top: 0.4vh;
     }
     .vcVoice{
         width: 10%;
         height: 5vh;
         background: url("/static/voice.png") center center no-repeat;
         background-size:auto 60%;
+        margin-top: 0.2vh;
     }
 </style>
