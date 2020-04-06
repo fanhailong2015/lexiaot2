@@ -1,20 +1,17 @@
 <template>
-    <swiper :options="swiperOption" ref="mySwiper" class="swiper ">
-        <!-- slides -->
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
-        <!-- Optional controls -->
-        <div class="swiper-pagination"  slot="pagination">
-            <span class="" v-for = "item in slideCont" :key="item.id"></span>
-        </div>
+    <swiper :options="swiperOption">
+        <swiper-slide class="swiper-slide" v-for="(item,index) in carouselArr" :key="index">
+            <img src="/static/logo.png"/>
+        </swiper-slide>
+        <!-- 左右箭头 -->
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>
     </swiper>
 </template>
 
 <script>
-    import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+    import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+    import 'swiper/css/swiper.css'
 
     export default {
         name: "Choose",
@@ -24,43 +21,29 @@
         },
         data() {
             return {
-                slideCont: [1, 2, 3],
-                swiperOption: {
-                    autoplay: 3000,
-                    effect: "",
-                    grabCursor: true,
-                    setWrapperSize: true,
-                    paginationClickable: true,
-                    mousewheelControl: true,
-                    observeParents: true,
-                    pagination: {
-                        el: ".swiper-pagination",
-                        bulletClass: "my-bullet",
-                        bulletActiveClass: "my-bullet-active"
-                    },
+                carouselArr: [1,2,3,4,5,6],
+                swiperOption:{
+                    //设置点击箭头
                     navigation: {
-                        nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev"
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev'
                     },
-                    on: {
-                        slideChange() {
-                            if (this.isBeginning) {
-                                this.navigation.$prevEl.css("display", "none");
-                            } else {
-                                this.navigation.$prevEl.css("display", "block");
-                            }
-                        }
-                    }
+                    //自动轮播
+                    autoplay: {
+                        delay: 2000,
+                        //当用户滑动图片后继续自动轮播
+                        disableOnInteraction: false,
+                    },
+                    //开启循环模式
+                    loop: true
                 }
             };
         },
         computed: {
-            swiper() {
-                return this.$refs.mySwiper.swiper
-            }
+
         },
         mounted() {
-            // this.swiper.slideTo(2, 1000, false)
+
         }
     }
 </script>
