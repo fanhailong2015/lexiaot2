@@ -10,18 +10,11 @@ const routes = [
         name: 'Home',
         component: Home
     },
-    // {
-    //     path: '/welcome',
-    //     name: 'Welcome',
-    //     component: () => import('../views/Welcome/Welcome.vue'),
-    //     redirect: '/welcome/first',
-    //     children:[
-    //         {
-    //             path: 'first', name: 'First',
-    //             component: () => import('../views/Welcome/First.vue')
-    //         },
-    //     ]
-    // },
+    {
+        path: '/choose',
+        name: 'Choose',
+        component: () => import('../views/Choose.vue'),
+    },
 
 ]
 
