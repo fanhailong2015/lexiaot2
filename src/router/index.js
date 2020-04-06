@@ -11,9 +11,17 @@ const routes = [
         component: Home
     },
     {
-        path: '/choose',
-        name: 'Choose',
-        component: () => import('../views/Choose.vue'),
+        path: '/center',
+        name: 'Center',
+        component: () => import('../views/Center.vue'),
+        redirect: '/index/choose',
+        children: [
+            {
+                path: 'choose',
+                name: 'Choose',
+                component: () => import('../views/Choose.vue'),
+            },
+        ]
     },
 
 ]

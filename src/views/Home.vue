@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="video-box">
-            <video class="video-box-video" src="https://v-cdn.zjol.com.cn/280443.mp4"></video>
+            <video class="video-box-video" src="https://v-cdn.zjol.com.cn/276982.mp4" controls></video>
             <div class="video-box-controls"></div>
         </div>
         <div class="center-box">
