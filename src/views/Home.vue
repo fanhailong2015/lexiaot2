@@ -1,18 +1,25 @@
 <template>
     <div>
-        <video class="video-box" src=""></video>
-        <div>
+        <div class="video-box">
+            <video class="video-box" src=""></video>
+        </div>
+        <div class="center-box">
             <div></div>
             <div></div>
         </div>
-        <div></div>
+        <div class="logo-box">
+            <logo></logo>
+        </div>
     </div>
 </template>
 
 <script>
-    // @ is an alias to /src
+    import Logo from '@/components/Logo'
     export default {
         name: 'Home',
+        components: {
+            Logo
+        },
         mounted(){
 
         },
@@ -21,6 +28,15 @@
         }
     }
 </script>
-<style lang="less" scoped>
-
+<style  scoped>
+    .video-box{
+        height: 35vh;
+        background: #000;
+    }
+    .center-box{
+        height: 45vh;
+    }
+    .logo-box{
+        height:  20vh
+    }
 </style>
