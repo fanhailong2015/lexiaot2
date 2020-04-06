@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <transition name="bounce" mode="out-in">
+      <img src="/static/back.jpg" alt="">
       <router-view/>
     </transition>
   </div>
