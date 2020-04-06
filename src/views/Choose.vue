@@ -1,17 +1,23 @@
 <template>
-    <div class="">
+    <div class="box">
         <div class="logo-box">
             <logo></logo>
         </div>
         <div class="center-box">
-            <swiper :options="swiperOption">
-                <swiper-slide class="swiper-slide" v-for="(item,index) in carouselArr" :key="index">
-                    <img src="/static/video-img.jpg" width="100%"/>
-                </swiper-slide>
-                <!-- 左右箭头 -->
-                <div class="sleft" slot="button-prev">1111</div>
-                <div class="sright" slot="button-next">22222</div>
-            </swiper>
+            <div class="center-box-l">
+                <img src="/static/people1.png" width="100%" alt="">
+            </div>
+            <div class="center-box-r">
+                <swiper :options="swiperOption">
+                    <swiper-slide class="swiper-slide" v-for="(item,index) in carouselArr" :key="index">
+                        <img src="/static/video-img.jpg" width="100%"/>
+                    </swiper-slide>
+                    <!-- 左右箭头 -->
+                    <div class="sleft" slot="button-prev">1111</div>
+                    <div class="sright" slot="button-next">22222</div>
+                </swiper>
+            </div>
+
         </div>
         <div class="footer-box"></div>
     </div>
@@ -56,6 +62,9 @@
 </script>
 
 <style scoped>
+    .box{
+        height: 100vh;
+    }
     .sleft:focus{
         outline: none;
     }
@@ -63,11 +72,33 @@
         outline: none;
     }
     .logo-box{
+        height: 8vh;
+        padding-top: 4vh;
+        padding-bottom: 4vh;
     }
     .center-box{
         height: 60vh;
     }
     .footer-box{
         height: 20vh;
+        background: url("/static/dl.png") center center no-repeat;
+        background-size: auto 80%;
+    }
+    .center-box-l{
+        width:30%;
+        height: 100%;
+        padding: 0 5%;
+        float: left;
+    }
+    .center-box-r{
+        width:60%;
+        float: right;
+    }
+    .sleft{
+        width: 20%;
+        position: absolute;
+        left: 0;
+        right: 30px;
+        background: url("/static/left.png");
     }
 </style>
