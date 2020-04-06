@@ -1,23 +1,34 @@
 <template>
-    <swiper :options="swiperOption">
-        <swiper-slide class="swiper-slide" v-for="(item,index) in carouselArr" :key="index">
-            <img src="/static/logo.png"/>
-        </swiper-slide>
-        <!-- 左右箭头 -->
-        <div class="sleft" slot="button-prev">1111</div>
-        <div class="sright" slot="button-next">22222</div>
-    </swiper>
+    <div class="">
+        <div class="logo-box">
+            <logo></logo>
+        </div>
+        <div class="center-box">
+            <swiper :options="swiperOption">
+                <swiper-slide class="swiper-slide" v-for="(item,index) in carouselArr" :key="index">
+                    <img src="/static/video-img.jpg" width="100%"/>
+                </swiper-slide>
+                <!-- 左右箭头 -->
+                <div class="sleft" slot="button-prev">1111</div>
+                <div class="sright" slot="button-next">22222</div>
+            </swiper>
+        </div>
+        <div class="footer-box"></div>
+    </div>
+
 </template>
 
 <script>
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
+    import Logo from '@/components/Logo'
 
     export default {
         name: "Choose",
         components: {
             Swiper,
-            SwiperSlide
+            SwiperSlide,
+            Logo
         },
         data() {
             return {
@@ -50,5 +61,13 @@
     }
     .sright:focus{
         outline: none;
+    }
+    .logo-box{
+    }
+    .center-box{
+        height: 60vh;
+    }
+    .footer-box{
+        height: 20vh;
     }
 </style>
