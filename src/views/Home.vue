@@ -1,24 +1,26 @@
 <template>
     <div>
         <div class="video-box">
-            <video ref="video" @canplay="videoCanPlay()" @timeupdate="videoTimeUpdate()" class="video-box-video" src="https://v-cdn.zjol.com.cn/276982.mp4" poster="/static/logo.png" playsinline></video>
+            <video ref="video" @canplay="videoCanPlay()" @timeupdate="videoTimeUpdate()" class="video-box-video" src="https://v-cdn.zjol.com.cn/276982.mp4" poster="/static/video-img.jpg" playsinline></video>
             <div class="video-box-controls">
                 <div class="vcTop">
                     <!-- 播放按钮 -->
-                    <div class="vcPlayBtn" @click="videoPlay()">{{vcIsPlay?'stop':'play'}}</div>
+                    <div :class="vcIsPlay ? 'play':'vcPlayBtn'" @click="videoPlay()"></div>
                     <!-- 播放时间 -->
                     <div class="vcPlayTime">{{vcCurrentTime}}/{{vcTotalTime}}</div>
                     <!-- 全屏 -->
-                    <div class="vcFullBtn" @click="showFullScreen()">full</div>
+                    <div class="vcFullBtn" @click="showFullScreen()"></div>
                 </div>
                 <div class="vcBottom">
                     <!-- 进度 -->
                     <input type="range" @input="mySlidechange($event.target)" min="0" max="100" class="videoProgress" v-model="vcProgress" :style="{backgroundSize:+ vcProgress*100/100 +'% 100%'}"/>
                 </div>
+                <!-- 声音 -->
+                <div class="vcVoice"></div>
             </div>
         </div>
         <div class="center-box">
-            <div></div>
+            <div class="heart"></div>
             <div></div>
         </div>
         <div class="logo-box">
@@ -109,9 +111,60 @@
         background: #fff;
     }
     .center-box{
-        height: 45vh;
+        position: relative;
+        height: 55vh;
+        background: url("/static/index-img.png") center center no-repeat;
+        background-size: 95% 100%;
+    }
+    .heart{
+        width: 45%;
+        height: 25vh;
+        position: absolute;
+        top: 3vh;
+        left: 2%;
+        background: url("/static/index-heart.png") center center no-repeat;
+        background-size: 100% 100%
     }
     .logo-box{
-        height:  20vh
+        height:  10vh
+    }
+    .vcPlayBtn,.vcPlayTime,.vcFullBtn,.vcBottom,.play,.vcVoice{ float: left;}
+    .play{
+        width: 10%;
+        height: 5vh;
+        background: url("/static/stop.png") center center no-repeat;
+        background-size: auto 60%;
+    }
+    .videoProgress{
+        margin-top:1vh;
+    }
+    .vcPlayBtn{
+        width: 10%;
+        height: 5vh;
+        background: url("/static/play.png") center center no-repeat;
+        background-size: auto 60%;
+    }
+    .vcPlayTime{
+        width: 26%;
+        line-height: 5vh;
+    }
+    .vcBottom{
+        width: 39%;
+        line-height: 5vh;
+    }
+    .vcFullBtn{
+        float: right;
+    }
+    .vcFullBtn{
+        width: 10%;
+        height: 5vh;
+        background: url("/static/full.png") center center no-repeat;
+        background-size: auto 60%;
+    }
+    .vcVoice{
+        width: 10%;
+        height: 5vh;
+        background: url("/static/voice.png") center center no-repeat;
+        background-size:auto 60%;
     }
 </style>

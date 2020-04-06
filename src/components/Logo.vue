@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <img src="/static/logo.png" alt="">
+    <div style="text-align: center;">
+        <img src="/static/logo.png" width="80%" alt="">
     </div>
 </template>
 
