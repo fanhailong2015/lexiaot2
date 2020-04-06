@@ -22,4 +22,8 @@ export default {
     height: 100vh;
     overflow: hidden;
   }
+  #app{
+    background: url("/static/back.jpg");
+    background-size: 100%;
+  }
 </style>
