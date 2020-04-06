@@ -1,6 +1,11 @@
 <template>
     <div>
-        121212
+        <video class="video-box" src=""></video>
+        <div>
+            <div></div>
+            <div></div>
+        </div>
+        <div></div>
     </div>
 </template>
 

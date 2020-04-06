@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img src="/static/back.jpg" alt="">
     <transition name="bounce" mode="out-in">
       <router-view/>
     </transition>
@@ -21,5 +20,9 @@ export default {
     margin: 0;
     height: 100vh;
     overflow: hidden;
+  }
+  #app{
+    background: url("/static/back.jpg");
+    background-size: 100%;
   }
 </style>
