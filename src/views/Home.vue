@@ -118,7 +118,7 @@
         position: relative;
         height: 57vh;
         background: url("/static/index-img.png") center center no-repeat;
-        background-size: 95% 100%;
+        background-size: 95%;
     }
     .heart{
         width: 45%;
