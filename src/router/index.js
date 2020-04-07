@@ -26,6 +26,11 @@ const routes = [
                 name: 'Active',
                 component: () => import('../views/Active.vue'),
             },
+            {
+                path: 'mine',
+                name: 'Mine',
+                component: () => import('../views/Mine.vue'),
+            },
         ]
     },
 

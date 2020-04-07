@@ -139,6 +139,7 @@
         animation: doudong 1s;
         animation-iteration-count: 999999999;
     }
+
     .center-box-l{
         width:36%;
         height: 100%;
