@@ -30,7 +30,15 @@
             </div>
         </div>
         <div class="alert_window" v-if="alert">
-
+            <div class="delete"></div>
+            <div class="font-box">
+                <div>
+                    <!--<h1>邀请码</h1>
+                    <h1>03939484</h1>-->
+                    <h1>您已经成功帮他点亮</h1>
+                    <img src="/static/but-2.png" width="80%" alt="">
+                </div>
+            </div>
         </div>
     </div>
 
@@ -88,12 +96,11 @@
     .alert_window{
         position: absolute;
         width: 84%;
-        top: -1vh;
-        bottom: -1vh;
+        top: -2vh;
+        bottom: -2vh;
         left: 8%;
-        background: #000;
+        background: rgba(0,0,0,0.6);
         z-index: 999;
-        opacity: 0.4;
     }
     .blockDiv{
         width: 80%;
@@ -118,5 +125,28 @@
     }
     .light{
         filter: brightness(120%); /* W3C */
+    }
+
+    .delete{
+        position: absolute;
+        top:23px;
+        right:20px;
+        background: url("/static/delete.png") center no-repeat;
+        background-size: 30px;
+        width: 30px;
+        height:30px;
+    }
+    .font-box{
+        height: 100%;
+        display: flex;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .font-box h1{
+        font-size: 26px;
+        color:#fff;
+        font-weight: normal;
     }
 </style>
