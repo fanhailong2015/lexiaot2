@@ -1,6 +1,6 @@
 <template>
     <div>
-        <jiu></jiu>
+        <jiu alert=""></jiu>
     </div>
 </template>
 
