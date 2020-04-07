@@ -96,6 +96,7 @@
         background: url("/static/dl.png") center center no-repeat;
         background-size: auto 80%;
     }
+
     .center-box-l{
         width:36%;
         height: 100%;
