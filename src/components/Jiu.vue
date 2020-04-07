@@ -62,7 +62,9 @@
             choose: {
                 type: Array,
                 required: false,
-                default: [1,5,9]
+                default: ()=>{
+                    return [1,5,9]
+                }
             },
             alert: {
                 type: String,
