@@ -5,26 +5,24 @@
         </div>
         <div class="center-box">
             <div class="center-box-l">
-                <img src="/static/people1.png" width="100%" alt="">
+                <img :src="'/static/people'+index+'.png'" width="100%" alt="">
             </div>
             <div class="center-box-r">
                 <div style="text-align: center;margin-bottom: 5px;font-size: 16px;"><span><b>请选择图案</b></span></div>
-                <swiper :options="swiperOption">
+                <swiper ref="mySwiper" :options="swiperOption">
 
-                        <swiper-slide class="swiper-slide" v-for="(item,index) in carouselArr" :key="index">
-                            <div style="width: 62%; margin: 0 auto;">
-                                <img style="box-shadow:0px 0px 12px 5px rgba(0,0,0,0.2)" src="/static/choose-1.jpg" width="100%"/>
-                                <div class="banner-font">
-                                    <h3>《人物》</h3>
-                                    <div><b>创作年份：2018年</b></div>
-                                    <div><b>小宇  16岁  自闭症</b></div>
-                                    <p>作品介绍：小宇的绘画风格色彩缤纷，图案不俗，几张色彩斑斓，若隐若现的神秘面孔，或许只是源于一根线条的恣意游走，在小宇的画笔下，却具有了诗意的灵魂。</p>
-                                </div>
+                    <swiper-slide class="swiper-slide" v-for="(item,index) in lists" :key="index">
+                        <div style="width: 62%; margin: 0 auto;">
+                            <img style="box-shadow:0px 0px 12px 5px rgba(0,0,0,0.2)" :src="item.img" width="100%"/>
+                            <div class="banner-font">
+                                <h3>《{{item.title}}》</h3>
+                                <div><b>创作年份：{{item.tips1}}年</b></div>
+                                <div><b>{{item.tips2}}</b></div>
+                                <p>作品介绍：{{item.des}}</p>
                             </div>
-                        </swiper-slide>
+                        </div>
+                    </swiper-slide>
 
-
-                    <!-- 左右箭头 -->
                     <div class="sleft" slot="button-prev"></div>
                     <div class="sright" slot="button-next"></div>
                 </swiper>
@@ -49,19 +47,62 @@
             Logo
         },
         data() {
+            const _this = this;
             return {
-                carouselArr: [1,2,3,4,5,6],
+                index:1,
                 swiperOption:{
                     //设置点击箭头
                     navigation: {
-                        nextEl: '.sleft',
-                        prevEl: '.sright'
+                        nextEl: '.sright',
+                        prevEl: '.sleft'
                     },
                     //自动轮播
                     autoplay: false,
                     //开启循环模式
-                    loop: true
-                }
+                    loop: true,
+                    on: {
+                        slideChangeTransitionEnd: function () {
+                            _this.index = this.realIndex+1;
+                        }
+                    }
+                },
+                lists: [
+                    {
+                        title: '人物',
+                        tips1: '2018',
+                        tips2: '小宇 16岁 自闭症',
+                        img: '/static/choose-1.jpg',
+                        des: '小宇的绘画风格色彩缤纷，图案\n' +
+                            '不俗，几张色彩斑斓，若隐若现的神秘面孔，\n' +
+                            '或许只是源于一根线条的恣意游走，在小宇\n' +
+                            '的画笔下，却具有了诗意的灵魂。',
+                    },
+                    {
+                        title: '星空朋友',
+                        tips1: '2018',
+                        tips2: '刘一 20岁 自闭症',
+                        img: '/static/choose-2.jpg',
+                        des: '刘一善于将多种形体、色块\n' +
+                            '巧妙组合，构成叠压交错的有趣画面。同\n' +
+                            '时他还是一位善于捕捉人物生活细节和\n' +
+                            '神态的漫画大师。这幅油画描绘了两位在\n' +
+                            '星空下畅想的小伙伴，给人充满童趣和纯\n' +
+                            '真的观感。',
+                    },
+                    {
+                        title: '地球2647年1月',
+                        tips1: '2017',
+                        tips2: '捷麟 26岁 自闭症',
+                        img: '/static/choose-3.jpg',
+                        des: '捷麟是一位有着一定学者症候群\n' +
+                            '特征的自闭症青年，除了绘画，他还有着某种\n' +
+                            '对于时空的想象性记忆。喜欢运算日历并用\n' +
+                            '图像记录下一些时空碎片，仿佛来自岁月深\n' +
+                            '处的回声。2647年1月的地球会是什么样子？\n' +
+                            '发生了些什么？捷麟以他独特的画面给我们\n' +
+                            '带来无限丰富的想象空间。',
+                    },
+                ]
             };
         },
         computed: {
@@ -95,6 +136,8 @@
         height: 20vh;
         background: url("/static/dl.png") center center no-repeat;
         background-size: auto 80%;
+        animation: doudong 1s;
+        animation-iteration-count: 999999999;
     }
     .center-box-l{
         width:36%;
@@ -117,7 +160,7 @@
         top: 11%;
         background: url("/static/left.png") no-repeat;
         background-size:auto 100%;
-        z-sindex: 999;
+        z-index: 9999;
     }
     .sright{
         width: 22px;
@@ -145,7 +188,15 @@
         margin-top: 5px;
     }
 
-
-
-
+    @keyframes doudong{
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(0.9);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
 </style>
