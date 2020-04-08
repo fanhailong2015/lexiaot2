@@ -5,14 +5,15 @@
             <div class="logo-box">
                 <logo></logo>
             </div>
-            <img src="/static/last-font1.png" width="70%" alt="">
-            <img style="margin-top: 5px" src="/static/yi-1.png" width="60%" alt="">
+            <rule></rule>
+            <img style="margin-top: 5vh" src="/static/last-font1.png" width="70%" alt="">
+            <img style="margin-top: 3vh" src="/static/yi-1.png" width="45%" alt="">
             <div class="last-footer">
                 <div>
-                    <div><img style="margin-right: 10px;width: 26px" src="/static/head-1.png" alt=""><span>您是第098位心动官</span></div>
+                    <div><img style="margin-right: 10px;width: 26px;" src="/static/head-1.png" alt=""><span>您是第098位心动官</span></div>
                     <img src="/static/last-font2.png" width="100%" alt="">
                 </div>
-                <img src="/static/rwm.jpg" width="80" alt="">
+                <img src="/static/rwm.jpg" width="60" alt="">
             </div>
         </div>
         <div style="text-align: center; position: relative;">
@@ -27,6 +28,7 @@
 
 <script>
     import Logo from '@/components/Logo'
+    import Rule from '@/components/Rule'
     import html2canvas from 'html2canvas';
     import wxapi from '@/utils/wxapi.js';
     import Clipboard from 'clipboard';
@@ -34,7 +36,7 @@
     export default {
         name: 'Home',
         components: {
-            Logo
+            Logo,Rule
         },
         data(){
             return {
@@ -115,11 +117,15 @@
         text-align: center;
         background-image: url('/static/last-back.png');
         background-repeat: no-repeat;
-        background-size: 100%;
-        height:80vh;
+        background-size: 100% 100%;
+        height:73vh;
+        margin-top: 3vh;
         background-position: top 5vh ;
     }
-    .last-footer{ margin: 0 10%}
+    .last-footer{
+        margin: 1vh 10% 0;
+        overflow: hidden;
+    }
     .last-footer>div{
         width: calc(100% - 90px);
         float: left;

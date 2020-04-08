@@ -96,7 +96,8 @@
     }
     .yi{
         height: 18vh;
-        margin-left: 10%;
+        margin-left: 8%;
+        margin-right: 8%;
     }
     .jiu{
          height: 46vh;
@@ -132,13 +133,16 @@
         margin-top: 5px;
     }
     .pl>div img{
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
         float: left;
     }
     .pl>div span{
         float: left;
-        line-height: 30px;
+        line-height: 20px;
+        width: calc(100% - 22px);
+        font-size: 14px;
+        margin-left: 2px;
     }
 	.black{
 		width: 100%;

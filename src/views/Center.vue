@@ -1,7 +1,11 @@
 <template>
-    <transition name="bounce" mode="out-in">
-        <router-view/>
-    </transition>
+    <div>
+        <div class="music"></div>
+        <transition name="bounce" mode="out-in">
+            <router-view/>
+
+        </transition>
+    </div>
 </template>
 
 <script>
@@ -11,5 +15,13 @@
 </script>
 
 <style scoped>
-
+    .music{
+        width: 25px;
+        height:25px;
+        position: absolute;
+        top:2vh;
+        right: 5%;
+        background: url("/static/music.png") no-repeat;
+        background-size: 25px;
+    }
 </style>
