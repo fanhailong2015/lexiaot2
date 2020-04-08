@@ -14,8 +14,8 @@
         <div class="jiu">
             <jiu :choose="opend" :type="type"></jiu>
         </div>
-        <div class="pl">
-            <div><img src="/static/head-1.png" alt=""><span>123456789</span></div>
+        <div class="pl" v-for="item in helpuser" v-if="item!=null">
+            <div v-if="item!=null"><img :src="item.headimgurl" alt=""><span>{{item.nickname}}为您点亮一块碎片</span></div>
         </div>
     </div>
 </template>

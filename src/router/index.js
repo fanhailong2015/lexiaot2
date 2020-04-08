@@ -32,7 +32,7 @@ const routes = [
                 component: () => import('../views/Mine.vue'),
             },
             {
-                path: 'help',
+                path: 'help/:openid',
                 name: 'Help',
                 component: () => import('../views/Help.vue'),
             },

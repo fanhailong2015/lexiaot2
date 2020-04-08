@@ -30,13 +30,13 @@
             </div>
         </div>
         <div class="alert_window" v-if="alert">
-            <div class="delete"></div>
+            <div class="delete" @click="tohiddenalert"></div>
             <div class="font-box">
                 <div>
                     <!--<h1>邀请码</h1>
                     <h1>03939484</h1>-->
-                    <h1>您已经成功帮他点亮</h1>
-                    <img src="/static/but-2.png" width="80%" alt="">
+                    <h1>{{alert}}</h1>
+                    <img src="/static/but-2.png" width="80%" alt="" @click="woyecanyu">
                 </div>
             </div>
         </div>
@@ -50,7 +50,8 @@
         data(){
             return {
                 light: 0,
-                jiange:500
+                jiange:500,
+                alert: ''
             };
         },
         props: {
@@ -59,17 +60,17 @@
                 required: false,
                 default: 1
             },
+            has: {
+                type: Number,
+                required: false,
+                default: 0
+            },
             choose: {
                 type: Array,
                 required: false,
                 default: ()=>{
                     return [1]
                 }
-            },
-            alert: {
-                type: String,
-                required: false,
-                default: ''
             },
 			jiang: {
                 type: Number,
@@ -97,8 +98,30 @@
 
                     if(round > 2 && this.light == index){
                         clearInterval(timer)
+
+                        // 1 有了
+                        if(this.has == 1){
+                            this.alert = '您的好友已获得同款碎片';
+                        }
+
+                        // 2 新的
+                        if(this.has == 2){
+                            this.alert = '您已经成功帮他点亮';
+                        }
+
+                        // 3 已经帮过
+                        if(this.has == 3){
+                            this.alert = '您已助力次数已用尽';
+                        }
+
                     }
                 },200)
+            },
+            tohiddenalert(){
+                this.alert = '';
+            },
+            woyecanyu(){
+                this.$router.push('/')
             }
         }
     }
