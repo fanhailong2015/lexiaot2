@@ -115,7 +115,7 @@
         z-index: 999;
     }
     .blockDiv{
-        width: 80%;
+        width: 70%;
         display:flex;
         flex-wrap: wrap;
         margin: 2vh auto;
