@@ -16,6 +16,8 @@ export default {
 		};
 	},
 	created(){
+	    //临时用
+        localStorage.setItem('openid','o4XrkvrPITTrsf3-jaBw9AlnQC-Q');
 
         let open = localStorage.getItem('openid');
         if(!open){
