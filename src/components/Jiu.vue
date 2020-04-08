@@ -63,18 +63,28 @@
                 type: Array,
                 required: false,
                 default: ()=>{
-                    return [1,5,9]
+                    return [1]
                 }
             },
             alert: {
                 type: String,
                 required: false,
                 default: ''
-            }
+            },
+			jiang: {
+                type: Number,
+                required: false,
+                default: 0
+			}
         },
         mounted(){
-            this.choujiang(8);
+            // this.jiang && this.choujiang(this.jiang);
         },
+		watch:{
+            jiang(val){
+                val && this.choujiang(val);
+			}
+		},
         methods: {
             choujiang (index){
                 let round = 0;
@@ -85,7 +95,7 @@
                         round++;
                     }
 
-                    if(round > 3 && this.light == index){
+                    if(round > 2 && this.light == index){
                         clearInterval(timer)
                     }
                 },200)

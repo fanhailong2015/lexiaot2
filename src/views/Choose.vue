@@ -29,7 +29,7 @@
             </div>
 
         </div>
-        <div class="footer-box"></div>
+        <div @click="dianliang" class="footer-box"></div>
     </div>
 
 </template>
@@ -110,7 +110,19 @@
         },
         mounted() {
 
-        }
+        },
+		methods: {
+            dianliang(){
+                let _this = this
+                axios.post('/light',{
+                    openid: localStorage.getItem('openid'),
+                    type: this.index
+                }).then(function(res){
+                    localStorage.setItem('lightTips',1);
+                    _this.$router.push('/center/mine')
+                })
+            }
+		}
     }
 </script>
 
@@ -138,6 +150,8 @@
         background-size: auto 80%;
         animation: doudong 1s;
         animation-iteration-count: 999999999;
+		position: relative;
+		z-index: 99999;
     }
 
     .center-box-l{
