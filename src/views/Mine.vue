@@ -12,7 +12,7 @@
             <div :class="'heart-1 '+ (opend.length<9?'choose':'')" @click="shows"></div>
         </div>
         <div class="jiu">
-            <jiu :choose="opend"></jiu>
+            <jiu :choose="opend" :type="type"></jiu>
         </div>
         <div class="pl">
             <div><img src="/static/head-1.png" alt=""><span>123456789</span></div>

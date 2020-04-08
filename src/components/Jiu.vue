@@ -2,31 +2,31 @@
     <div style="position: relative;">
         <div class="blockDiv">
             <div :class="'block ' + (choose.indexOf(1)==-1?'hui ':'') + (light==1?'light':'')">
-                <img src="/static/active1/1.gif"/>
+                <img :src="'/static/active'+type+'/1.jpg'"/>
             </div>
             <div :class="'block ' + (choose.indexOf(2)==-1?'hui ':'') + (light==2?'light':'')">
-                <img src="/static/active1/2.gif"/>
+                <img :src="'/static/active'+type+'/2.jpg'"/>
             </div>
             <div :class="'block ' + (choose.indexOf(3)==-1?'hui ':'') + (light==3?'light':'')">
-                <img src="/static/active1/3.gif"/>
+                <img :src="'/static/active'+type+'/3.jpg'"/>
             </div>
             <div :class="'block ' + (choose.indexOf(4)==-1?'hui ':'') + (light==6?'light':'')">
-                <img src="/static/active1/4.gif"/>
+                <img :src="'/static/active'+type+'/4.jpg'"/>
             </div>
             <div :class="'block ' + (choose.indexOf(5)==-1?'hui ':'') + (light==5?'light':'')">
-                <img src="/static/active1/5.gif"/>
+                <img :src="'/static/active'+type+'/5.jpg'"/>
             </div>
             <div :class="'block ' + (choose.indexOf(6)==-1?'hui ':'') + (light==4?'light':'')">
-                <img src="/static/active1/6.gif"/>
+                <img :src="'/static/active'+type+'/6.jpg'"/>
             </div>
             <div :class="'block ' + (choose.indexOf(7)==-1?'hui ':'') + (light==7?'light':'')">
-                <img src="/static/active1/7.gif"/>
+                <img :src="'/static/active'+type+'/7.jpg'"/>
             </div>
             <div :class="'block ' + (choose.indexOf(8)==-1?'hui ':'') + (light==8?'light':'')">
-                <img src="/static/active1/8.gif"/>
+                <img :src="'/static/active'+type+'/8.jpg'"/>
             </div>
             <div :class="'block ' + (choose.indexOf(9)==-1?'hui ':'') + (light==9?'light':'')">
-                <img src="/static/active1/9.gif"/>
+                <img :src="'/static/active'+type+'/9.jpg'"/>
             </div>
         </div>
         <div class="alert_window" v-if="alert">
