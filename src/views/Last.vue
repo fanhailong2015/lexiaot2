@@ -1,18 +1,23 @@
 <template>
     <div>
+
+    <div class="last-box">
         <div class="logo-box">
             <logo></logo>
         </div>
-        <div class="yi">
-            <img src="/static/yi-1.png" height="100%" alt="">
-            <div class="heart-2 choose"></div>
-            <div class="heart-1"></div>
+        <img src="/static/last-font1.png" width="70%" alt="">
+        <img style="margin-top: 5px" src="/static/yi-1.png" width="60%" alt="">
+        <div class="last-footer">
+            <div>
+                <div><img style="margin-right: 10px;width: 26px" src="/static/head-1.png" alt=""><span>您是第098位心动官</span></div>
+                <img src="/static/last-font2.png" width="100%" alt="">
+            </div>
+            <img src="/static/rwm.jpg" width="80" alt="">
         </div>
-        <div class="jiu">
-            <jiu></jiu>
-        </div>
-        <div class="pl">
-            <div><img src="/static/head-1.png" alt=""><span>123456789</span></div>
+    </div>
+        <div class="footer">
+            <div style="margin: 10px 0"> 长按保存证书 </div>
+            <img src="/static/last-img.png"HEIGHT="60%" alt="">
         </div>
     </div>
 </template>
@@ -42,54 +47,29 @@
 <style  scoped>
     .logo-box{
         height: 8vh;
-        padding-top: 4vh;
+        padding-top: 7vh;
         padding-bottom: 4vh;
     }
-    .yi{
-        height: 18vh;
-        margin-left: 10%;
+    .last-box{
+        text-align: center;
+        background-image: url('/static/last-back.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height:80vh;
+        background-position: top 5vh ;
     }
-    .jiu{
-         height: 46vh;
-     }
-    .heart-1{
-        width: 27%;
-        height: 100%;
-        background: url("/static/yi-xin1.png") bottom no-repeat;
-        background-size: 90%;
-        float: right;
-    }
-    .heart-1.choose{
-        background: url("/static/yi-xin11.png") bottom no-repeat;
-        background-size: 90%;
-    }
-    .heart-2{
-        width: 27%;
-        height: 100%;
-        background: url("/static/yi-xin2.png") bottom no-repeat;
-        background-size: 90%;
-        float: right;
-    }
-    .heart-2.choose{
-        background: url("/static/yi-xin22.png") bottom no-repeat;
-        background-size: 90%;
-    }
-    .pl{
-        width: 80%;
-       margin: 0 auto;
-    }
-    .pl>div{
-        overflow: hidden;
-        margin-top: 5px;
-    }
-    .pl>div img{
-        width: 30px;
-        height: 30px;
+    .last-footer{ margin: 0 10%}
+    .last-footer>div{
+        width: calc(100% - 90px);
         float: left;
     }
-    .pl>div span{
-        float: left;
-        line-height: 30px;
+    .last-footer>img{
+        float: right;
+    }
+    .footer{
+        width: 100%;
+        text-align: center;
+        height: 20vh;
     }
 
 </style>
