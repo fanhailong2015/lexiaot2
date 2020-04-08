@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="video-box">
-            <video ref="video" @canplay="videoCanPlay()" @timeupdate="videoTimeUpdate()" class="video-box-video" src="https://v-cdn.zjol.com.cn/276982.mp4" poster="/static/video-img.jpg" playsinline></video>
+            <video ref="video" @canplay="videoCanPlay()" @timeupdate="videoTimeUpdate()" class="video-box-video" src="http://h5.lexiaole-cn.com/h5.mp4" poster="/static/cover.jpg" playsinline></video>
             <div class="video-box-controls">
                 <div class="vcTop">
                     <!-- 播放按钮 -->
@@ -16,7 +16,7 @@
                     <input type="range" @input="mySlidechange($event.target)" min="0" max="100" class="videoProgress" v-model="vcProgress" :style="{backgroundSize:+ vcProgress*100/100 +'% 100%'}"/>
                 </div>
                 <!-- 声音 -->
-                <div class="vcVoice" @click="onVoice()"></div>
+                <div :class="'vcVoice ' + (vcMuted ? 'no':'')" @click="onVoice()"></div>
             </div>
         </div>
         <div class="center-box">
@@ -40,6 +40,7 @@
                 vcIsPlay:false,//video是否播放
                 vcProgress:0,//video进度
                 vcIsFull:false,//是否全屏
+				vcMuted: false
             }
         },
         components: {
@@ -62,9 +63,11 @@
             },
             onVoice(){
                 this.$refs.video.muted = !this.$refs.video.muted
+                this.vcMuted = this.$refs.video.muted;
+
             },
-            onPlayerPlay() {
-                console.log('on player');
+            mySlidechange(data) {
+                this.$refs.video.currentTime=parseInt(data.value/100*111);
             },
             videoTimeUpdate(){
                 var currTime =this.$refs.video.currentTime;
@@ -109,6 +112,7 @@
         height: 27vh;
         width: 100%;
         object-fit:cover;
+		display: block;
     }
     .video-box-controls{
         height: 6vh;
@@ -178,6 +182,10 @@
         background-size:auto 60%;
         margin-top: 0.2vh;
     }
+
+	.vcVoice.no{
+		background-image: url("/static/voice2.png");
+	}
 
     @keyframes doudong{
         0% {
