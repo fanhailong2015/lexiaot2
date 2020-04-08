@@ -7,7 +7,7 @@
             <logo></logo>
         </div>
         <div class="yi">
-            <img src="/static/yi-1.png" height="100%" alt="">
+            <img :src="'/static/yi-'+type+'.png'" height="100%" alt="">
             <div :class="'heart-2 '+ (opend.length>=9?'choose':'')" @click="hebing"></div>
             <div :class="'heart-1 '+ (opend.length<9?'choose':'')" @click="shows"></div>
         </div>
