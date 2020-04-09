@@ -17,7 +17,7 @@ export default {
 	},
 	created(){
 	    //临时用
-        // localStorage.setItem('openid','o4XrkvrPITTrsf3-jaBw9AlnQC-Q');
+        localStorage.setItem('openid','o4XrkvrPITTrsf3-jaBw9AlnQC-Q');
 
         let open = localStorage.getItem('openid');
         if(!open){
@@ -62,5 +62,13 @@ export default {
   #app{
     background: url("/static/back.jpg");
     background-size: 100% 100%;
+  }
+
+  .bounce-enter-active,.bounce-leave-active {
+	  transition: opacity .1s;
+  }
+
+  .bounce-enter, .bounce-leave-to {
+	  opacity: 0;
   }
 </style>
