@@ -1,6 +1,6 @@
 <template>
     <div style="position: relative;">
-        <div class="blockDiv">
+        <div :class="'blockDiv '+(hechengSign ? 'blockDiv2' : '')">
             <div :class="'block ' + (choose.indexOf(1)==-1?'hui ':'') + (light==1?'light':'')">
                 <img :src="'/static/active'+type+'/1.jpg'"/>
             </div>
@@ -51,7 +51,8 @@
             return {
                 light: 0,
                 jiange:500,
-                alert: ''
+                alert: '',
+                hechengSign: false
             };
         },
         props: {
@@ -76,6 +77,11 @@
                 type: Number,
                 required: false,
                 default: 0
+			},
+			hecheng:{
+                type: Boolean,
+                required: false,
+                default: false
 			}
         },
         mounted(){
@@ -84,9 +90,18 @@
 		watch:{
             jiang(val){
                 val && this.choujiang(val);
+			},
+            hecheng(val){
+                val && this.hechengdonghua(val);
 			}
 		},
         methods: {
+            hechengdonghua(val){
+				this.hechengSign = val
+				setTimeout(()=>{
+				    this.$router.push('/center/last')
+				},2100)
+			},
             choujiang (index){
                 let round = 0;
                 let timer = setInterval(() => {
@@ -148,6 +163,12 @@
         margin:1px;
         box-sizing: border-box;
     }
+    .blockDiv2 .block{
+        width: calc(calc(100% / 3)) !important;
+        margin:0px !important;
+		animation: doudong 1s;
+		animation-iteration-count: 2;
+	}
     .block:hover{
 
     }
@@ -156,7 +177,7 @@
         display: block;
     }
     .hui{
-        filter: brightness(60%); /* W3C */
+        filter: brightness(40%); /* W3C */
     }
     .light{
         filter: brightness(120%); /* W3C */
@@ -184,4 +205,18 @@
         color:#fff;
         font-weight: normal;
     }
+	@keyframes doudong{
+		0% {
+			transform: scale(1);
+			filter: brightness(100%);
+		}
+		50% {
+			transform: scale(0.9);
+			filter: brightness(300%);
+		}
+		100% {
+			transform: scale(1);
+			filter: brightness(100%);
+		}
+	}
 </style>

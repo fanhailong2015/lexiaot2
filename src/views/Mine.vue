@@ -12,7 +12,7 @@
             <div :class="'heart-1 '+ (opend.length<9?'choose':'')" @click="shows"></div>
         </div>
         <div class="jiu">
-            <jiu :choose="opend" :type="type"></jiu>
+            <jiu :choose="opend" :type="type" :hecheng="hecheng"></jiu>
         </div>
         <div class="pl" v-for="item in helpuser" v-if="item!=null">
             <div v-if="item!=null"><img :src="item.headimgurl" alt=""><span>{{item.nickname}}为您点亮一块碎片</span></div>
@@ -36,7 +36,8 @@
                 type: 1,
                 my: {},
                 lightTips: 0,
-                lightTipsText: ''
+                lightTipsText: '',
+                hecheng: false
             }
         },
         components: {
@@ -52,10 +53,6 @@
                 _this.help = res.data.data.help
                 _this.helpuser = res.data.data.helpuser
                 _this.my = res.data.data.my
-
-                if(res.data.data.opend.length >= 9){
-
-                }
 
                 _this.shares();
 
@@ -82,7 +79,7 @@
             },
             hebing(){
                 if(this.opend.length >= 9){
-                    window.console.log('合成')
+                    this.hecheng = true;
 				}
 			}
         }
@@ -127,11 +124,13 @@
     .pl{
         width: 80%;
        margin: 0 auto;
+		overflow: hidden;
     }
     .pl>div{
         overflow: hidden;
         margin-top: 5px;
-    }
+		animation: 10s rowup linear infinite normal;
+	}
     .pl>div img{
         width: 20px;
         height: 20px;
@@ -157,5 +156,15 @@
 		position: absolute;
 		right:0%;
 		top:0px;
+	}
+	@keyframes rowup {
+		0% {
+			-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 90px, 0);
+		}
+		100% {
+			-webkit-transform: translate3d(0, -307px, 0);
+			transform: translate3d(0, -150px, 0);
+		}
 	}
 </style>
