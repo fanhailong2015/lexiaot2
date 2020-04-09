@@ -19,7 +19,7 @@
                 <div :class="'vcVoice ' + (vcMuted ? 'no':'')" @click="onVoice()"></div>
             </div>
         </div>
-        <div class="center-box">
+        <div class="center-box" @click="tochoose">
             <div class="heart"></div>
             <div></div>
         </div>
@@ -99,7 +99,10 @@
                 m = m < 10 ? "0"+m : m;
                 s = s < 10 ? "0"+s : s;
                 return m+":"+s;
-            }
+            },
+            tochoose(){
+                this.$router.push('/center/choose');
+			}
         }
     }
 </script>

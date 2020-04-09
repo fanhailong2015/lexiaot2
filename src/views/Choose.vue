@@ -1,5 +1,6 @@
 <template>
     <div class="box">
+		<rule></rule>
         <div class="logo-box">
             <logo></logo>
         </div>
@@ -38,13 +39,14 @@
     import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
     import Logo from '@/components/Logo'
+    import Rule from '@/components/Rule'
 
     export default {
         name: "Choose",
         components: {
             Swiper,
             SwiperSlide,
-            Logo
+            Logo,Rule
         },
         data() {
             const _this = this;

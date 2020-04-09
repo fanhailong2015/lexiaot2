@@ -1,10 +1,10 @@
 <template>
     <div>
-        <div class="rule">
+        <div class="rule" @click="shows">
             <img src="/static/gz.png" width="70" alt="">
         </div>
-        <div class="rule-alert">
-            <div class="close"></div>
+        <div class="rule-alert" v-if="show">
+            <div class="close" @click="shows"></div>
             <div>
                 <h1>活动规则</h1>
                 <div>活动时间：</div>
@@ -22,7 +22,17 @@
 
 <script>
     export default {
-        name: "Rule"
+        name: "Rule",
+		data(){
+            return {
+                show: false,
+			}
+		},
+		methods: {
+            shows(){
+                this.show = !this.show
+			}
+		}
     }
 </script>
 
@@ -33,9 +43,9 @@
         top:18vh;
     }
     .rule-alert{
-        display: none;
         position: absolute;
         left: 5%;
+		z-index: 99999999999999999;
         top: 16%;
         background: rgba(255,255,255,0.8);
         width: 80%;
@@ -48,6 +58,7 @@
     }
     .rule-alert div{
         text-align: left;
+		font-size: 14px;
         line-height: 30px;
     }
     .close{
