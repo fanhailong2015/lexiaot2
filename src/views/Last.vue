@@ -9,7 +9,7 @@
 				<img src="/static/last-font1.png" width="70%" alt="">
 			</div>
 			<div class="logo-333">
-				<img src="/static/yi-1.png" height="100%" alt="">
+				<img :src="'/static/yi-'+type+'.png'" height="100%" alt="">
 			</div>
 			<div class="logo-444"></div>
             <div class="last-footer">
