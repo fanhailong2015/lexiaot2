@@ -100,7 +100,7 @@
 				this.hechengSign = val
 				setTimeout(()=>{
 				    this.$router.push('/center/last')
-				},2100)
+				},4000)
 			},
             choujiang (index){
                 let round = 0;
