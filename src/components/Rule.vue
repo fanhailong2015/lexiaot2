@@ -58,6 +58,7 @@
     }
     .rule-alert div{
         text-align: left;
+		font-size: 14px;
         line-height: 30px;
     }
     .close{

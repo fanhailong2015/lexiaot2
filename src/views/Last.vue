@@ -25,8 +25,18 @@
         </div>
         <div class="footer">
             <div style="margin: 10px 0"> 长按保存证书 </div>
-            <img src="/static/last-img.png"HEIGHT="60%" alt="">
+            <img src="/static/last-img.png" class="aadfdsfs" HEIGHT="60%" alt="" @click="showalert">
         </div>
+		<div class="alert_window" v-if="alert">
+			<div class="delete" @click="tohiddenalert"></div>
+			<div class="font-box">
+				<div>
+					<h1>邀请码</h1>
+					<h1>{{code ? code : '- -'}}</h1>
+					<img src="/static/but.png" width="60%" alt="" @click="bbbb">
+				</div>
+			</div>
+		</div>
     </div>
 </template>
 
@@ -43,6 +53,7 @@
         },
         data(){
             return {
+                alert: false,
                 show: false,
                 dataURL: '',
                 oldshow: true,
@@ -102,16 +113,28 @@
                 html2canvas(this.$refs.imageWrapper,{
                     backgroundColor: null,
                     height:this.$refs.imageWrapper.offsetHeight,
+                    useCORS: true,//允许加载跨域的图片
+                    tainttest:true, //检测每张图片都已经加载完成
                 }).then((canvas) => {
                     let dataURL = canvas.toDataURL("image/png");
                     this.dataURL = dataURL;
                     this.oldshow = false;
                 });
+            },
+            tohiddenalert(){
+                this.alert = false;
+            },
+            showalert(){
+                this.alert = true;
             }
         }
     }
 </script>
 <style  scoped>
+	.aadfdsfs{
+		animation: doudong 1s;
+		animation-iteration-count: 999999999;
+	}
 	.bbbbb{
 		height: 95vh;
 		padding-top: 5vh;
@@ -163,5 +186,49 @@
         text-align: center;
         height: 20vh;
     }
+
+	.alert_window{
+		position: absolute;
+		width: 84%;
+		left: 8%;
+		height: 40vh;
+		top: 30vh;
+		background: rgba(0,0,0,0.6);
+		z-index: 999;
+	}
+	.delete{
+		position: absolute;
+		top:23px;
+		right:20px;
+		background: url("/static/delete.png") center no-repeat;
+		background-size: 30px;
+		width: 30px;
+		height:30px;
+	}
+	.font-box{
+		height: 100%;
+		display: flex;
+		overflow: hidden;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	.font-box h1{
+		font-size: 20px;
+		color:#fff;
+		font-weight: normal;
+	}
+
+	@keyframes doudong{
+		0% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(0.9);
+		}
+		100% {
+			transform: scale(1);
+		}
+	}
 
 </style>
