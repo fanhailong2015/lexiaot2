@@ -25,7 +25,7 @@
         </div>
         <div class="footer">
             <div style="margin: 10px 0"> 长按保存证书 </div>
-            <img src="/static/last-img.png" class="aadfdsfs" HEIGHT="60%" alt="" @click="showalert">
+            <img src="/static/last-img2.png" class="aadfdsfs" HEIGHT="60%" alt="" @click="showalert">
         </div>
 		<div class="alert_window" v-if="alert">
 			<div class="delete" @click="tohiddenalert"></div>
