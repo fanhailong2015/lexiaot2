@@ -139,7 +139,7 @@
     }
     .pl>div span{
         float: left;
-        line-height: 20px;
+        line-height: 20px; 
         width: calc(100% - 22px);
         font-size: 14px;
         margin-left: 2px;
