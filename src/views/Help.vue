@@ -1,5 +1,6 @@
 <template>
     <div>
+		<rule></rule>
         <div class="logo-box">
             <logo></logo>
         </div>
@@ -17,6 +18,7 @@
 
 <script>
     import Logo from '@/components/Logo'
+    import Rule from '@/components/Rule'
     import Jiu from '@/components/Jiu'
     import wxapi from '@/utils/wxapi.js';
 
@@ -34,7 +36,7 @@
             }
         },
         components: {
-            Logo,Jiu
+            Logo,Jiu,Rule
         },
         mounted(){
             let _this = this
