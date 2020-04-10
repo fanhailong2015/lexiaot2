@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="video-box">
-            <video ref="video" @canplay="videoCanPlay()" @timeupdate="videoTimeUpdate()" class="video-box-video" src="http://h5.lexiaole-cn.com/media/h5.mp4" poster="/static/cover.jpg" playsinline></video>
+            <video ref="video" @canplay="videoCanPlay()" @timeupdate="videoTimeUpdate()" class="video-box-video" src="http://h5.lexiaole-cn.com/h5.mp4" poster="/static/cover.jpg" playsinline></video>
             <div class="video-box-controls">
                 <div class="vcTop">
                     <!-- 播放按钮 -->
