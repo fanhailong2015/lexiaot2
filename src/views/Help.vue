@@ -73,6 +73,9 @@
         },
         methods: {
             chooseone(){
+                if(this.helped == '1'){
+                    return false;
+                }
                 let _this = this
                 axios.post('/help/open',{
                     fromopenid: this.$route.params.openid,
