@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div :class="'music ' + (isrun ? 'isrun' : 'norun')" @click="yinyuekaiguan"></div>
+        <div :class="'music ' + (isrun ? 'isrun' : 'norun')" @click="yinyuekaiguan" v-if="showMusic"></div>
 		<audio class="music" src="/yinyue.mp3" id="musicMp3" :controls="true" :autoplay="true" :loop="true" hidden ref="au"></audio>
 		<transition name="bounce" mode="out-in">
             <router-view/>
@@ -15,7 +15,8 @@
         name: "Center",
         data(){
             return {
-                isrun: true
+                isrun: true,
+                showMusic : true
             }
         },
 		mounted(){
@@ -46,6 +47,10 @@
             })
 		},
         methods: {
+            hiddenMusic(){
+                //最后一个页面不显示音乐图标
+                this.showMusic = false;
+            },
             yinyuekaiguan(){
                 this.isrun = !this.isrun
                 var audio = document.getElementById("musicMp3");

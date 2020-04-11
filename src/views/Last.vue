@@ -64,6 +64,7 @@
             }
         },
         mounted(){
+            this.$parent.hiddenMusic();//最后一个页面不显示音乐图标
             let _this = this
             axios.post('/user',{
                 openid: localStorage.getItem('openid'),
@@ -104,7 +105,7 @@
             bbbb(){
                 var clipboard = new Clipboard('#copyBtn');
                 clipboard.on('success', function(e) {
-                    alert("复制成功",1500);
+                    alert("复制成功，点击确定为您跳转至乐小T商城..",1500);
                     e.clearSelection();
                 });
                 window.location.href = 'https://shop46116484.m.youzan.com/v2/showcase/feature?alias=pTkR2UPrgA&sf=wx_menu';
