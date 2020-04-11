@@ -40,6 +40,7 @@
                 </div>
             </div>
         </div>
+        <div class="alert-box" v-if="alert_tips">{{alert_tips_text}}</div>
     </div>
 
 </template>
@@ -52,7 +53,9 @@
                 light: 0,
                 jiange:500,
                 alert: '',
-                hechengSign: false
+                hechengSign: false,
+                alert_tips: false,
+                alert_tips_text: ''
             };
         },
         props: {
@@ -98,9 +101,12 @@
         methods: {
             hechengdonghua(val){
 				this.hechengSign = val
+                this.alert_tips = true ;
+                this.alert_tips_text = 'T恤合成中..';
+
 				setTimeout(()=>{
 				    this.$router.push('/center/last')
-				},4000)
+				},2500)
 			},
             choujiang (index){
                 let round = 0;
@@ -219,4 +225,16 @@
 			filter: brightness(100%);
 		}
 	}
+    .alert-box{
+        position: absolute;
+        top:30%;
+        left: 50%;
+        margin-left: -100px;
+        width:180px;
+        padding:15px;
+        text-align: center;
+        background: rgba(0,0,0,0.5);
+        color:#fff;
+        z-index: 999999999999999;
+    }
 </style>

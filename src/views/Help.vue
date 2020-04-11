@@ -74,6 +74,7 @@
         methods: {
             chooseone(){
                 if(this.helped == '1'){
+                    alert("您已助力完成");
                     return false;
                 }
                 let _this = this
