@@ -40,6 +40,7 @@
     import 'swiper/css/swiper.css'
     import Logo from '@/components/Logo'
     import Rule from '@/components/Rule'
+    import wx from 'weixin-js-sdk'
 
     export default {
         name: "Choose",
@@ -111,7 +112,31 @@
 
         },
         mounted() {
-
+            let link = location.href.replace(location.hash, '');
+            axios.post('/generateWxConfig',{
+                link: link,
+            }).then(function(res){
+                var dataList = res.data.data; //转译为Json字符串
+                var data = dataList;
+                wx.config({
+                    debug: false, // 开启调试模式
+                    appId: data.appId, // 必填，公众号的唯一标识
+                    timestamp: data.timestamp, // 必填，生成签名的时间戳
+                    nonceStr: data.nonceStr, // 必填，生成签名的随机串
+                    signature: data.signature, // 必填，签名，见附录1
+                    jsApiList: [
+                        'checkJsApi',
+                        'updateTimelineShareData',
+                        'updateAppMessageShareData',
+                        'onMenuShareQQ',
+                        'onMenuShareWeibo'
+                    ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                });
+                wx.ready(function(){
+                    var audio = document.getElementById("musicMp3");
+                    audio.play()
+                });
+            })
         },
 		methods: {
             dianliang(){
