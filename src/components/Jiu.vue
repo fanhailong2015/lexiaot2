@@ -10,13 +10,13 @@
             <div :class="'block ' + (choose.indexOf(3)==-1?'hui ':'') + (light==3?'light':'')">
                 <img :src="'/static/active'+type+'/3.jpg'"/>
             </div>
-            <div :class="'block ' + (choose.indexOf(4)==-1?'hui ':'') + (light==6?'light':'')">
+            <div :class="'block ' + (choose.indexOf(6)==-1?'hui ':'') + (light==6?'light':'')">
                 <img :src="'/static/active'+type+'/4.jpg'"/>
             </div>
             <div :class="'block ' + (choose.indexOf(5)==-1?'hui ':'') + (light==5?'light':'')">
                 <img :src="'/static/active'+type+'/5.jpg'"/>
             </div>
-            <div :class="'block ' + (choose.indexOf(6)==-1?'hui ':'') + (light==4?'light':'')">
+            <div :class="'block ' + (choose.indexOf(4)==-1?'hui ':'') + (light==4?'light':'')">
                 <img :src="'/static/active'+type+'/6.jpg'"/>
             </div>
             <div :class="'block ' + (choose.indexOf(7)==-1?'hui ':'') + (light==7?'light':'')">
@@ -116,7 +116,7 @@
 
                         // 1 有了
                         if(this.has == 1){
-                            this.alert = '您的好友已获得同款碎片';
+                            this.alert = '感谢您的参与，好友已点亮该碎片';
                         }
 
                         // 2 新的
@@ -126,7 +126,7 @@
 
                         // 3 已经帮过
                         if(this.has == 3){
-                            this.alert = '您已助力次数已用尽';
+                            this.alert = '您已助力完成';
                         }
 
                     }

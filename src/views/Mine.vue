@@ -53,7 +53,7 @@
                 _this.type = res.data.data.active*1
                 _this.opend = res.data.data.opend
                 _this.help = res.data.data.help
-                _this.helpuser = [...res.data.data.helpuser,...res.data.data.helpuser,...res.data.data.helpuser,...res.data.data.helpuser,...res.data.data.helpuser,...res.data.data.helpuser,...res.data.data.helpuser]
+                _this.helpuser = res.data.data.helpuser
                 _this.my = res.data.data.my
 
                 _this.shares();

@@ -11,7 +11,7 @@
             <jiu :jiang="jiang" :choose="opend" :has="has" :type="type"></jiu>
         </div>
         <div class="pl" @click="chooseone">
-            <img style="margin-top: 3vh" src="/static/dl.png" width="30%" alt="">
+            <img style="margin-top: 3vh" :src="'/static/dl'+helped+'.png'" width="30%" alt="">
         </div>
     </div>
 </template>
@@ -27,6 +27,7 @@
         data(){
             return {
                 has: 0,
+                helped: "2",
                 jiang:0,
                 opend:[],
                 type: 1,
@@ -67,6 +68,8 @@
                     }
                 }
             })
+
+            this.checkhelp();
         },
         methods: {
             chooseone(){
@@ -82,6 +85,22 @@
                     }
                     _this.has = result.has;
                     _this.jiang = result.number;
+                    _this.helped = "1";
+                })
+            },
+            checkhelp(){
+                var _this = this;
+                axios.post('/helped',{
+                    openid: localStorage.getItem('openid')
+                }).then(function(res){
+                    const result = res.data.data;
+                    if(res.data.data.error){
+                        alert(res.data.data.message);
+                        return ;
+                    }
+                    if(res.data.data){
+                        _this.helped = "1";
+                    }
 
                 })
             }

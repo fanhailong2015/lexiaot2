@@ -154,6 +154,8 @@
         animation-iteration-count: 999999999;
 		position: relative;
 		z-index: 99999;
+        background-position: bottom;
+        margin-top: 3vh;
     }
 
     .center-box-l{
@@ -167,6 +169,7 @@
         padding-top: 38px;
         float: right;
         position: relative;
+        top: -2vh;
     }
 
     .sleft{

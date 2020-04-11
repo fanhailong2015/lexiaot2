@@ -48,10 +48,11 @@
         methods: {
             yinyuekaiguan(){
                 this.isrun = !this.isrun
+                var audio = document.getElementById("musicMp3");
                 if(this.isrun){
                     audio.play()
                 }else {
-                    audio.stop()
+                    audio.pause()
                 }
             }
         }
