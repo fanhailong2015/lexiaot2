@@ -1,23 +1,23 @@
 <template>
     <div>
         <div class="video-box">
-            <video ref="video" @canplay="videoCanPlay()" @timeupdate="videoTimeUpdate()" class="video-box-video" src="http://h5.lexiaole-cn.com/h5.mp4" poster="/static/cover.jpg" playsinline></video>
-            <div class="video-box-controls">
-                <div class="vcTop">
-                    <!-- 播放按钮 -->
-                    <div :class="vcIsPlay ? 'play':'vcPlayBtn'" @click="videoPlay()"></div>
-                    <!-- 播放时间 -->
-                    <div class="vcPlayTime">{{vcCurrentTime}}/{{vcTotalTime}}</div>
-                    <!-- 全屏 -->
-                    <div class="vcFullBtn" @click="showFullScreen()"></div>
-                </div>
-                <div class="vcBottom">
-                    <!-- 进度 -->
-                    <input type="range" @input="mySlidechange($event.target)" min="0" max="100" class="videoProgress" v-model="vcProgress" :style="{backgroundSize:+ vcProgress*100/100 +'% 100%'}"/>
-                </div>
-                <!-- 声音 -->
-                <div :class="'vcVoice ' + (vcMuted ? 'no':'')" @click="onVoice()"></div>
-            </div>
+            <video  class="video-box-video" src="http://h5.lexiaole-cn.com/h5.mp4" poster="http://h5.lexiaole-cn.com/static/cover.jpg" playsinline  autoplay="autoplay" controls="controls" x5-video-player-type="h5"></video>
+            <!--<div class="video-box-controls">-->
+            <!--<div class="vcTop">-->
+                <!--&lt;!&ndash; 播放按钮 &ndash;&gt;-->
+                <!--<div :class="vcIsPlay ? 'play':'vcPlayBtn'" @click="videoPlay()"></div>-->
+                <!--&lt;!&ndash; 播放时间 &ndash;&gt;-->
+                <!--<div class="vcPlayTime">{{vcCurrentTime}}/{{vcTotalTime}}</div>-->
+                <!--&lt;!&ndash; 全屏 &ndash;&gt;-->
+                <!--<div class="vcFullBtn" @click="showFullScreen()"></div>-->
+            <!--</div>-->
+            <!--<div class="vcBottom">-->
+                <!--&lt;!&ndash; 进度 &ndash;&gt;-->
+                <!--<input type="range" @input="mySlidechange($event.target)" min="0" max="100" class="videoProgress" v-model="vcProgress" :style="{backgroundSize:+ vcProgress*100/100 +'% 100%'}"/>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; 声音 &ndash;&gt;-->
+            <!--<div :class="'vcVoice ' + (vcMuted ? 'no':'')" @click="onVoice()"></div>-->
+        <!--</div>-->
         </div>
         <div class="center-box" @click="tochoose">
             <div class="heart"></div>
@@ -112,7 +112,7 @@
         background: #000;
     }
     .video-box-video{
-        height: 27vh;
+        height: 33vh;
         width: 100%;
         object-fit:cover;
 		display: block;
