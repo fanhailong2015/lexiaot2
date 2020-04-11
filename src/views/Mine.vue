@@ -82,7 +82,9 @@
             hebing(){
                 if(this.opend.length >= 9){
                     this.hecheng = true;
-				}
+				}else{
+                    alert("您还未集齐9块碎片哦");
+                }
 			}
         }
     }
@@ -108,9 +110,22 @@
         background-size: 90%;
         float: right;
     }
+    @keyframes doudong{
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
     .heart-1.choose{
         background: url("/static/yi-xin11.png") bottom no-repeat;
         background-size: 90%;
+        animation: doudong 1s;
+        animation-iteration-count: 999999999;
     }
     .heart-2{
         width: 27%;
@@ -122,6 +137,8 @@
     .heart-2.choose{
         background: url("/static/yi-xin22.png") bottom no-repeat;
         background-size: 90%;
+        animation: doudong 1s;
+        animation-iteration-count: 999999999;
     }
     .pl{
         width: 80%;
