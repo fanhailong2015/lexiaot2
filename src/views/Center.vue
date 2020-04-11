@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="music"></div>
+        <div :class="'music ' + (isrun ? 'isrun' : 'norun')" @click="yinyuekaiguan"></div>
 		<audio class="music" src="/yinyue.mp3" id="musicMp3" :controls="true" :autoplay="true" :loop="true" hidden ref="au"></audio>
 		<transition name="bounce" mode="out-in">
             <router-view/>
@@ -13,6 +13,11 @@
     import wx from 'weixin-js-sdk'
     export default {
         name: "Center",
+        data(){
+            return {
+                isrun: true
+            }
+        },
 		mounted(){
             let link = location.href.replace(location.hash, '');
             axios.post('/generateWxConfig',{
@@ -39,7 +44,17 @@
                     audio.play()
                 });
             })
-		}
+		},
+        methods: {
+            yinyuekaiguan(){
+                this.isrun = !this.isrun
+                if(this.isrun){
+                    audio.play()
+                }else {
+                    audio.stop()
+                }
+            }
+        }
     }
 </script>
 
@@ -52,5 +67,9 @@
         right: 5%;
         background: url("/static/music.png") no-repeat;
         background-size: 25px;
+    }
+
+    .music.norun{
+        background-image: url("/static/music-stop.png");
     }
 </style>

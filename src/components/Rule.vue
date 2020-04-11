@@ -47,7 +47,7 @@
         left: 5%;
 		z-index: 99999999999999999;
         top: 16%;
-        background: rgba(255,255,255,0.8);
+        background: rgba(255,255,255,0.9);
         width: 80%;
         padding: 10% 5%;
         box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);

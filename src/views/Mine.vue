@@ -14,8 +14,10 @@
         <div class="jiu">
             <jiu :choose="opend" :type="type" :hecheng="hecheng"></jiu>
         </div>
-        <div class="pl" v-for="item in helpuser" v-if="item!=null">
-            <div v-if="item!=null"><img :src="item.headimgurl" alt=""><span>{{item.nickname}}为您点亮一块碎片</span></div>
+        <div class="pl">
+            <template v-for="item in helpuser" v-if="item!=null">
+                <div v-if="item!=null"><img :src="item.headimgurl" alt=""><span>{{item.nickname}}为您点亮一块碎片</span></div>
+            </template>
         </div>
     </div>
 </template>
@@ -51,7 +53,7 @@
                 _this.type = res.data.data.active*1
                 _this.opend = res.data.data.opend
                 _this.help = res.data.data.help
-                _this.helpuser = res.data.data.helpuser
+                _this.helpuser = [...res.data.data.helpuser,...res.data.data.helpuser,...res.data.data.helpuser,...res.data.data.helpuser,...res.data.data.helpuser,...res.data.data.helpuser,...res.data.data.helpuser]
                 _this.my = res.data.data.my
 
                 _this.shares();
@@ -123,6 +125,7 @@
     }
     .pl{
         width: 80%;
+        height: 15vh;
        margin: 0 auto;
 		overflow: hidden;
     }
@@ -138,7 +141,7 @@
     }
     .pl>div span{
         float: left;
-        line-height: 20px; 
+        line-height: 20px;
         width: calc(100% - 22px);
         font-size: 14px;
         margin-left: 2px;
