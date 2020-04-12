@@ -12,7 +12,7 @@
             <div :class="'heart-1 '+ (opend.length<9?'choose':'')" @click="shows"></div>
         </div>
         <div class="jiu">
-            <jiu :choose="opend" :type="type" :hecheng="hecheng"></jiu>
+            <jiu :choose="opend" :type="type" :hecheng="hecheng" :jiang="jiang"></jiu>
         </div>
         <div class="pl">
             <template v-for="item in helpuser" v-if="item!=null">
@@ -51,11 +51,18 @@
                 openid: localStorage.getItem('openid'),
             }).then(function(res){
                 _this.type = res.data.data.active*1
-                _this.opend = res.data.data.opend
                 _this.help = res.data.data.help
                 _this.helpuser = res.data.data.helpuser
                 _this.my = res.data.data.my
-
+                if(!localStorage.getItem('openone')){
+                    _this.jiang = 1;
+                    setTimeout(function () {
+                        _this.opend = res.data.data.opend
+                        localStorage.setItem('openone',1);
+                    },5600);
+                }else{
+                    _this.opend = res.data.data.opend
+                }
                 _this.shares();
 
             })
