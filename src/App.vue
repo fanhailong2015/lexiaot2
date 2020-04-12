@@ -1,10 +1,10 @@
 <template>
   <div id="app">
+    <audio class="music" src="/yinyue.mp3" id="musicMp3" :controls="true" :autoplay="true" :loop="true" hidden ref="au"></audio>
     <transition name="bounce" mode="out-in">
       <router-view/>
     </transition>
   </div>
-  <audio class="music" src="/yinyue.mp3" id="musicMp3" :controls="true" :autoplay="true" :loop="true" hidden ref="au"></audio>
 </template>
 
 <script>
