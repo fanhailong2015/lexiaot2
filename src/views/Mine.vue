@@ -32,6 +32,7 @@
         data(){
             return {
                 hidden: true,
+                jiang: 0,
                 opend:[],
                 help:[],
                 helpuser:[],

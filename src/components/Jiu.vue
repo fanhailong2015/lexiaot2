@@ -1,6 +1,6 @@
 <template>
     <div style="position: relative;">
-        <audio class="music" src="/choujiang.mp3" id="choujiang" :loop="true" hidden ref="choujiangc"></audio>
+        <audio src="/choujiang.mp3" id="choujiang" :loop="true" hidden ref="choujiangc"></audio>
         <div :class="'blockDiv '+(hechengSign ? 'blockDiv2' : '')">
             <div :class="'block ' + (choose.indexOf(1)==-1?'hui ':'') + (light==1?'light':'')">
                 <img :src="'/static/active'+type+'/1.jpg'"/>
@@ -110,7 +110,9 @@
 				},2500)
 			},
             choujiang (index){
-                this.$refs.choujiangc.play();
+                var choujiang = document.getElementById("choujiang");
+                choujiang.play();
+
                 let round = 0;
                 let timer = setInterval(() => {
                     this.light ++
@@ -136,7 +138,7 @@
                         if(this.has == 3){
                             this.alert = '您已助力完成';
                         }
-                        this.$refs.choujiangc.pause();
+                        choujiang.pause();
 
                     }
                 },200)
