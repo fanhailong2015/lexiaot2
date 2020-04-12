@@ -54,10 +54,14 @@
             yinyuekaiguan(){
                 this.isrun = !this.isrun
                 var audio = document.getElementById("musicMp3");
+                var choujiang = document.getElementById("choujiang");
                 if(this.isrun){
                     audio.play()
                 }else {
                     audio.pause()
+                    if(choujiang){
+                        choujiang.pause();
+                    }
                 }
             }
         }
