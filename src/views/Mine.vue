@@ -12,7 +12,7 @@
             <div :class="'heart-1 '+ (opend.length<9?'choose':'')" @click="shows"></div>
         </div>
         <div class="jiu">
-            <jiu :choose="opend" :type="type" :hecheng="hecheng" :jiang="jiang"></jiu>
+            <jiu :choose="opend" :type="type" :hecheng="hecheng" :jiang="jiang"  v-show="showdiv"></jiu>
         </div>
         <div class="pl">
             <template v-for="item in helpuser" v-if="item!=null">
@@ -40,7 +40,8 @@
                 my: {},
                 lightTips: 0,
                 lightTipsText: '',
-                hecheng: false
+                hecheng: false,
+                showdiv: false
             }
         },
         components: {
@@ -55,6 +56,7 @@
                 _this.help = res.data.data.help
                 _this.helpuser = res.data.data.helpuser
                 _this.my = res.data.data.my
+                _this.showdiv = true
                 if(!localStorage.getItem('openone')){
                     _this.jiang = 1;
                     setTimeout(function () {
