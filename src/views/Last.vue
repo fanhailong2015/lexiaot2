@@ -74,7 +74,7 @@
                 _this.code = res.data.data.coupon
                 _this.my = res.data.data.my
                 _this.$nextTick(()=> {
-                    setTimeout(()=>_this.toImage(),0);
+                    setTimeout(()=>_this.toImage(),1000);
                 })
 
                 _this.shares();
