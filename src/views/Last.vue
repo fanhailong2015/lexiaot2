@@ -93,7 +93,7 @@
                     var dataList = res.data.data; //转译为Json字符串
                     wxapi.wxRegister(dataList,{
                         title: '不想做一颗孤独的星星，所以我发出了爱的信号。', // 分享标题
-                        desc: '您的好友点亮碎片，快来看看吧！', // 分享描述
+                        desc: '您的好友点亮图案，快来看看吧！', // 分享描述
                         link: 'http://h5.lexiaole-cn.com/index.html',
                         imgUrl: 'http://h5.lexiaole-cn.com/static/cover.jpg'
                     });
