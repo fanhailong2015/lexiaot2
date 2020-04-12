@@ -63,11 +63,9 @@
                 })
 
                 if(_this.$route.params.openid == localStorage.getItem('openid')){
-                    if(res.data.data.opend.length >= 9){
-                        _this.$router.push('/center/last');
-                    }else{
-                        _this.$router.push('/center/mine');
-                    }
+
+                    _this.$router.push('/center/mine');
+
                 }
             })
 
