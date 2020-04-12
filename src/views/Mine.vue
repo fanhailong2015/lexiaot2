@@ -73,7 +73,6 @@
                 this.hidden = !this.hidden
             },
             shares(){
-                alert('http://h5.lexiaole-cn.com/index.html#/center/help/'+localStorage.getItem('openid'));
                 let link = location.href.replace(location.hash, '');
                 let _this = this;
                 axios.post('/generateWxConfig',{
