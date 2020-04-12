@@ -97,7 +97,8 @@
             checkhelp(){
                 var _this = this;
                 axios.post('/helped',{
-                    openid: localStorage.getItem('openid')
+                    fromopenid: this.$route.params.openid,
+                    selfopenid: localStorage.getItem('openid')
                 }).then(function(res){
                     const result = res.data.data;
                     if(res.data.data.error){
