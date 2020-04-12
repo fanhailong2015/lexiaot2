@@ -1,7 +1,7 @@
 <template>
     <div>
         <div :class="'music ' + (isrun ? 'isrun' : 'norun')" @click="yinyuekaiguan" v-if="showMusic"></div>
-		<audio class="music" src="/yinyue.mp3" id="musicMp3" :controls="true" :autoplay="true" :loop="true" hidden ref="au"></audio>
+
 		<transition name="bounce" mode="out-in">
             <router-view/>
 

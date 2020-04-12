@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="video-box">
-            <video  class="video-box-video" src="http://h5.lexiaole-cn.com/h5.mp4" poster="http://h5.lexiaole-cn.com/static/cover.jpg" playsinline  autoplay="autoplay" controls="controls" x5-video-player-type="h5"></video>
+            <video  class="video-box-video" src="http://h5.lexiaole-cn.com/h5.mp4" poster="http://h5.lexiaole-cn.com/static/cover.jpg" playsinline  controls="controls" x5-video-player-type="h5"></video>
             <!--<div class="video-box-controls">-->
             <!--<div class="vcTop">-->
                 <!--&lt;!&ndash; 播放按钮 &ndash;&gt;-->
