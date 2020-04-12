@@ -16,11 +16,32 @@ const wxApi = {
                 'updateTimelineShareData',
                 'updateAppMessageShareData',
                 'onMenuShareQQ',
-                'onMenuShareWeibo'
+                'onMenuShareWeibo',
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage'
             ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
         })
 
         wx.ready(function(){
+            wx.onMenuShareTimeline({
+                title: option.title, // 分享标题
+                link: option.link, // 分享链接
+                imgUrl: option.imgUrl, // 分享图标
+                success: function () {
+                    // 用户点击了分享后执行的回调函数
+                }
+            });
+            wx.onMenuShareAppMessage({
+                title: option.title, // 分享标题
+                desc: option.desc, // 分享描述
+                link: option.link, // 分享链接
+                imgUrl: option.imgUrl, // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    // 用户点击了分享后执行的回调函数
+                }
+            });
             wx.updateTimelineShareData({
                 title: option.title, // 分享标题
                 link: option.link, // 分享链接
