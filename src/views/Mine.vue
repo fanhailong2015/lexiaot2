@@ -16,7 +16,7 @@
         </div>
         <div class="pl">
             <template v-for="item in helpuser" v-if="item!=null">
-                <div v-if="item!=null"><img :src="item.headimgurl" alt=""><span>{{item.nickname}}为您点亮一块图片</span></div>
+                <div v-if="item!=null"><img :src="item.headimgurl" alt=""><span>{{item.nickname}}为您点亮一块图案</span></div>
             </template>
         </div>
     </div>
@@ -91,7 +91,7 @@
                 if(this.opend.length >= 9){
                     this.hecheng = true;
 				}else{
-                    alert("您还未集齐9块图片哦");
+                    alert("您还未集齐9块图案哦");
                 }
 			}
         }
