@@ -140,6 +140,10 @@
 </script>
 
 <style scoped>
+    .banner-font{
+        height: 45vh;
+        overflow-y: scroll;
+    }
     .box{
         height: 100vh;
     }
@@ -177,10 +181,9 @@
     }
     .center-box-r{
         width:60%;
-        padding-top: 38px;
+        padding-top: 2vh;
         float: right;
         position: relative;
-        top: -2vh;
     }
 
     .sleft{
