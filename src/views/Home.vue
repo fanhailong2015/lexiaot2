@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="video-box">
-            <video  class="video-box-video" src="http://h5.lexiaole-cn.com/h5.mp4" poster="http://h5.lexiaole-cn.com/static/cover.jpg" playsinline  controls="controls" x5-video-player-type="h5"></video>
+            <video  class="video-box-video" src="http://h5.lexiaole-cn.com/h5.mp4" poster="http://h5.lexiaole-cn.com/static/cover.jpg" playsinline  controls="controls" x5-video-player-type="h5" @timeupdate="videoTimeUpdate()"></video>
             <!--<div class="video-box-controls">-->
             <!--<div class="vcTop">-->
                 <!--&lt;!&ndash; 播放按钮 &ndash;&gt;-->
@@ -70,11 +70,8 @@
                 this.$refs.video.currentTime=parseInt(data.value/100*111);
             },
             videoTimeUpdate(){
-                var currTime =this.$refs.video.currentTime;
-                var duration =this.$refs.video.duration;
-                this.vcCurrentTime = this.getFormatVideoTime(currTime);
-                var pre = currTime / duration;
-                this.vcProgress = pre*100;
+                var audio = document.getElementById("musicMp3");
+                audio.pause();
             },
             videoCanPlay(){
                 var duration =this.$refs.video.duration;
