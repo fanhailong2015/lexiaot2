@@ -7,7 +7,7 @@
         <div class="yi">
 
         </div>
-        <div class="jiu">
+        <div class="jiu" v-show="showdiv">
             <jiu :jiang="jiang" :choose="opend" :has="has" :type="type"></jiu>
         </div>
         <div class="pl" @click="chooseone">
@@ -34,6 +34,7 @@
                 messagennn: '',
                 hasnumbera: 0,
                 my: {},
+                showdiv: false
             }
         },
         components: {
@@ -47,6 +48,7 @@
                 _this.type = res.data.data.active*1
                 _this.opend = res.data.data.opend
                 _this.my = res.data.data.my;
+                _this.showdiv = true;
                 let link = location.href.replace(location.hash, '');
                 axios.post('/generateWxConfig',{
                     link: link,
