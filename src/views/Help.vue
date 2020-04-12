@@ -53,7 +53,7 @@
                 }).then(function(res){
                     var dataList = res.data.data; //转译为Json字符串
                     wxapi.wxRegister(dataList,{
-                        title: '您的好友'+ _this.my.nickname +'邀请您帮他点亮碎片，快来看看吧！', // 分享描述
+                        title: '您的好友'+ _this.my.nickname +'邀请您帮他点亮图案，快来看看吧！', // 分享描述
                         desc: '不想做一颗孤独的星星，所以我发出了爱的信号。', // 分享标题
                         link: 'http://h5.lexiaole-cn.com/index.html#/center/help/'+_this.$route.params.openid, // 分享链接
                         imgUrl: 'http://h5.lexiaole-cn.com/static/cover.jpg'
