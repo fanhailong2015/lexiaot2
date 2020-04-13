@@ -82,7 +82,7 @@
                     wxapi.wxRegister(dataList,{
                         title: '您的好友'+ _this.my.nickname +'邀请您帮他点亮图案，快来看看吧！', // 分享描述
                         desc: '不想做一颗孤独的星星，所以我发出了爱的信号。', // 分享标题
-                        link: 'http://h5.lexiaole-cn.com/index.html?#/center/help/'+localStorage.getItem('openid'), // 分享链接
+                        link: 'http://h5.lexiaole-cn.com/index.html?a=1#/center/help/'+localStorage.getItem('openid')+"?a=2", // 分享链接
                         imgUrl: 'http://h5.lexiaole-cn.com/static/cover.jpg'
                     });
                 })
