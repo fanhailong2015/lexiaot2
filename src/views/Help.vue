@@ -73,10 +73,10 @@
         },
         methods: {
             chooseone(){
-                if(this.helped == '1'){
-                    alert("您已助力完成");
-                    return false;
-                }
+                // if(this.helped == '1'){
+                //     alert = '您已助力完成';
+                //     return false;
+                // }
                 let _this = this
                 axios.post('/help/open',{
                     fromopenid: this.$route.params.openid,
@@ -99,10 +99,10 @@
                     selfopenid: localStorage.getItem('openid')
                 }).then(function(res){
                     const result = res.data.data;
-                    if(res.data.data.error){
-                        alert(res.data.data.message);
-                        return ;
-                    }
+                    // if(res.data.data.error){
+                    //     alert(res.data.data.message);
+                    //     return ;
+                    // }
                     if(res.data.data){
                         _this.helped = "1";
                     }
