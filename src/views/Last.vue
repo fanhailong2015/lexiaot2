@@ -79,6 +79,22 @@
 
                 _this.shares();
             })
+
+            var clipboard = new Clipboard('#copyBtn');
+            // var supp = Clipboard.isSupported();
+            // //alert(supp);
+            clipboard.on('success', function(e) {
+                alert("复制成功，点击确定为您跳转至乐小T商城..",1500);
+                e.clearSelection();
+                window.location.href = 'https://shop46116484.m.youzan.com/v2/showcase/feature?alias=pTkR2UPrgA&sf=wx_menu';
+            });
+            clipboard.on('error', function(e) {
+                // alert(e.text);alert(e.action);alert(e.trigger);
+                // console.error('Action:', e.action);
+                // console.error('Trigger:', e.trigger);
+                window.location.href = 'https://shop46116484.m.youzan.com/v2/showcase/feature?alias=pTkR2UPrgA&sf=wx_menu';
+            });
+            //window.location.href = 'https://shop46116484.m.youzan.com/v2/showcase/feature?alias=pTkR2UPrgA&sf=wx_menu';
         },
         methods:{
             shows(){
@@ -103,12 +119,20 @@
                 this.show = !this.show
             },
             bbbb(){
-                var clipboard = new Clipboard('#copyBtn');
-                clipboard.on('success', function(e) {
-                    alert("复制成功，点击确定为您跳转至乐小T商城..",1500);
-                    e.clearSelection();
-                });
-                window.location.href = 'https://shop46116484.m.youzan.com/v2/showcase/feature?alias=pTkR2UPrgA&sf=wx_menu';
+                // var clipboard = new Clipboard('#copyBtn');
+                // var supp = Clipboard.isSupported();
+                // alert(supp);
+                // clipboard.on('success', function(e) {
+                //     alert("复制成功，点击确定为您跳转至乐小T商城..",1500);
+                //     e.clearSelection();
+                // });
+                // clipboard.on('error', function(e) {
+                //     alert(e.text);alert(e.action);alert(e.trigger);
+                //     console.error('Action:', e.action);
+                //     console.error('Trigger:', e.trigger);
+                //
+                // });
+                //window.location.href = 'https://shop46116484.m.youzan.com/v2/showcase/feature?alias=pTkR2UPrgA&sf=wx_menu';
             },
             toImage() {
                 html2canvas(this.$refs.imageWrapper,{
