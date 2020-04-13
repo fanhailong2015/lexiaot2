@@ -33,7 +33,7 @@
 				<div>
 					<h1>邀请码</h1>
 					<h1 id="target">{{code ? code : '- -'}}</h1>
-					<img src="/static/but.png" width="60%" alt="" @click="bbbb" id="copyBtn" data-clipboard-action="copy" data-clipboard-target="#target">
+                   <img src="/static/but.png" width="60%" alt="" id="copyBtn" data-clipboard-action="copy" data-clipboard-target="#target">
 				</div>
 			</div>
 		</div>
