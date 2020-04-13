@@ -37,7 +37,7 @@
                     <!--<h1>邀请码</h1>
                     <h1>03939484</h1>-->
                     <h1>{{alert}}</h1>
-                    <img src="/static/but-2.png" width="80%" alt="" @click="woyecanyu">
+                    <img src="/static/but-2.png" width="100vh" alt="" @click="woyecanyu">
                 </div>
             </div>
         </div>
@@ -212,7 +212,7 @@
         text-align: center;
     }
     .font-box h1{
-        font-size: 26px;
+        font-size: 22px;
         color:#fff;
         font-weight: normal;
     }
