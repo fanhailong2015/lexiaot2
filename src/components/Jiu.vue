@@ -111,7 +111,7 @@
 			},
             choujiang (index){
                 var choujiang = document.getElementById("choujiang");
-                choujiang.play();
+                // choujiang.play();
 
                 let round = 0;
                 let timer = setInterval(() => {
